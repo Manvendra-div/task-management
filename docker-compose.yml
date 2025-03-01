@@ -16,10 +16,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
-    environment:
-      - NODE_ENV=production
-      - PORT=5000
-      - MONGODB_URI=mongodb+srv://ms1577239:Mu20tSOhVH75dxW9@cluster0.yqwr16v.mongodb.net/task-management?retryWrites=true&w=majority&appName=Cluster0
+    env_file:
+      - ./server/.env
     networks:
       - app-network
 
